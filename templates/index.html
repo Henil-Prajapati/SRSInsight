@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Requirement Specification Studio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="neon-circle"></div>
+            <h1>Software Requirement Specification</h1>
+            <p class="subtitle">This tool helps create comprehensive software requirements specifications including features, client specifications, and system specifications for various stakeholders.</p>
+        </header>
+
+        <section class="features-section">
+            <h2><i class="fas fa-star"></i> SRS Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-file-alt feature-icon"></i>
+                    <div class="feature-text">Client Specifications in User-Friendly Language</div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-code feature-icon"></i>
+                    <div class="feature-text">Detailed Specifications in Structured Format</div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-project-diagram feature-icon"></i>
+                    <div class="feature-text">Concept Definition via UML Diagrams</div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-desktop feature-icon"></i>
+                    <div class="feature-text">Forms type and device prints for GUI</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="workflow-section">
+            <h2><i class="fas fa-sitemap"></i> Workflow</h2>
+            <div class="workflow-grid">
+                <div class="workflow-item">
+                    <h3><i class="fas fa-cogs workflow-icon"></i>System Engineers</h3>
+                    <div id="systemEngineers"></div>
+                </div>
+                <div class="workflow-item">
+                    <h3><i class="fas fa-vial workflow-icon"></i>Test Engineers</h3>
+                    <div id="testEngineers"></div>
+                </div>
+                <div class="workflow-item">
+                    <h3><i class="fas fa-tools workflow-icon"></i>Maintenance Engineers</h3>
+                    <div id="maintenanceEngineers"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <div class="card">
+                <h2><i class="fas fa-magic"></i> Generate SRS Document</h2>
+                <form id="srsForm">
+                    <div class="form-group">
+                        <label for="title">Project Title</label>
+                        <input type="text" id="title" placeholder="Enter project title">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Project Description</label>
+                        <textarea id="description" placeholder="Enter project description" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="functionalities">Key Functionalities</label>
+                        <textarea id="functionalities" placeholder="Enter key functionalities (one per line)" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="diagramType">Diagram Type</label>
+                        <select id="diagramType">
+                            <option value="Use Case Diagram">Use Case Diagram</option>
+                            <option value="Activity Diagram">Activity Diagram</option>
+                            <option value="Sequence Diagram">Sequence Diagram</option>
+                            <option value="Class Diagram">Class Diagram</option>
+                        </select>
+                    </div>
+                    
+                    <button type="button" id="generateBtn"><i class="fas fa-sync-alt"></i> Generate SRS Document</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="results" class="results-section" style="display: none;">
+            <div id="status"></div>
+            <div id="diagram"></div>
+            <button id="downloadBtn" style="display: none;"><i class="fas fa-download"></i> Download SRS Document</button>
+        </section>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

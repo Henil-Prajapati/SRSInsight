@@ -1,0 +1,5 @@
+flask
+tavily-python
+groq
+langchain
+python-docx
